@@ -4,4 +4,4 @@
 /server/.idea/
 /server/.env
 /server/package-lock.json
-/server/utils/crawrealdata.py
+/server/utils/crawrealdata.xlsx
