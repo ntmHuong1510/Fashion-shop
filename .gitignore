@@ -5,3 +5,26 @@
 /server/.env
 /server/package-lock.json
 /server/utils/crawrealdata.xlsx
+
+#gitignore for frontend side
+# dependencies
+/userUI/node_modules
+/userUI/.pnp
+/userUI.pnp.js
+
+# testing
+/userUI/coverage
+
+# production
+/userUI/build
+
+# misc
+/userUI/.DS_Store
+/userUI/.env.local
+/userUI/.env.development.local
+/userUI/.env.test.local
+/userUI/.env.production.local
+
+/userUI/npm-debug.log*
+/userUI/yarn-debug.log*
+/userUI/yarn-error.log*
