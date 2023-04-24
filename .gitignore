@@ -1,0 +1,7 @@
+/server/node_modules
+/server/vendor
+/server/.idea
+/server/.idea/
+/server/.env
+/server/package-lock.json
+/server/utils/crawrealdata.py
