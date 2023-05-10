@@ -19,6 +19,6 @@ function extractToken(req) {
 }
 
 module.exports = {
-  formatResponse: formatResponse,
-  extractToken: extractToken,
+  formatResponse,
+  extractToken,
 };
