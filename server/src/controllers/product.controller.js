@@ -9,12 +9,12 @@ async function getProductList(req, res, next) {
       currentPage,
       cateId,
       sortKey,
-      sortType,
+      sortType
     );
     res.status(200).json(
       commonUtils.formatResponse("Get success!", 200, {
         ...listProduct,
-      }),
+      })
     );
   } catch (err) {
     console.error(`Error while get`, err.message);
@@ -30,13 +30,13 @@ async function getProduct(req, res, next) {
       res.status(200).json(
         commonUtils.formatResponse("Get success!", 200, {
           ...listProduct[0],
-        }),
+        })
       );
     } else {
       res
         .status(200)
         .json(
-          commonUtils.formatResponse("Missing param product_id", 404, null),
+          commonUtils.formatResponse("Missing param product_id", 404, null)
         );
     }
   } catch (err) {
@@ -53,15 +53,30 @@ async function searchProduct(req, res, next) {
       currentPage,
       searchText,
       sortKey,
-      sortType,
+      sortType
     );
     res.status(200).json(
       commonUtils.formatResponse("Get success!", 200, {
         ...listProduct,
-      }),
+      })
     );
   } catch (err) {
     console.error(`Error while get`, err.message);
+    next(err);
+  }
+}
+
+async function deleteProduct(req, res, next) {
+  try {
+    const product_id = req?.body;
+    if (!product_id) {
+      res
+        .status(404)
+        .json(commonUtils.formatResponse("Missing product ID!!!", 404, null));
+    } else {
+    }
+  } catch (error) {
+    console.error(`Error while auth`, err.message);
     next(err);
   }
 }
@@ -70,4 +85,5 @@ module.exports = {
   getProductList,
   searchProduct,
   getProduct,
+  deleteProduct,
 };

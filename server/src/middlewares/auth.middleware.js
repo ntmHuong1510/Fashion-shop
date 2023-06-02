@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { extractToken } = require("../utils/common.util");
-const jwtSecret = process.env.JWT_SERECT;
+const jwtSecret = "process.env.JWT_SERECT";
 const commonUtils = require("../utils/common.util");
 
 const verifyToken = (req, res, next) => {
@@ -10,10 +10,7 @@ const verifyToken = (req, res, next) => {
     jwt.verify(token, jwtSecret, (err) => {
       if (err) {
         return res.json(
-          commonUtils.formatResponse(
-            "Not authorized, token not available",
-            401,
-          ),
+          commonUtils.formatResponse("Not authorized, token not available", 401)
         );
       } else {
         next();
@@ -23,7 +20,7 @@ const verifyToken = (req, res, next) => {
     return res
       .status(200)
       .json(
-        commonUtils.formatResponse("Not authorized, token not available", 401),
+        commonUtils.formatResponse("Not authorized, token not available", 401)
       );
   }
 };
